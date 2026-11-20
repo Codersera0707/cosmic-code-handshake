@@ -28,3 +28,8 @@ use the editor.
   own key and store it in Secrets.
 - **Secrets.** Lovable manages them. Do not put secret values in the repo.
 <!-- LOVABLE:END -->
+
+## Project rules
+
+- The intro animation lives in `src/components/intro/`: `engine.ts` is framework-free Canvas 2D, `shapes.ts` generates point clouds procedurally, `timeline.ts` holds all phase times; `CosmicIntro.tsx` is only a thin React wrapper — keeps the animation portable into another portfolio codebase.
+- Particle positions are closed-form functions of time (no stateful physics, no trail accumulation buffers) — keeps skip/resize deterministic and avoids canvas ghosting.
